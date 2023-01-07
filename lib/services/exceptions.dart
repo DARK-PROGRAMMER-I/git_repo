@@ -1,10 +1,11 @@
-class Endpoints{
+class BaseOptions{
   String baseUrl;
   String connectionTimeOut;
   String receiveTimeOut;
-  Endpoints(
-    this.baseUrl,
-    this.connectionTimeOut,
-    this.receiveTimeOut,
+  BaseOptions(
+      this.baseUrl,
+      this.connectionTimeOut,
+      this.receiveTimeOut,
+
   );
 }
