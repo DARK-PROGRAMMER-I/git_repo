@@ -10,9 +10,7 @@ class AppRoutes {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case homepage:
-        return MaterialPageRoute(
-          builder: (_) => const HomeScreen(),
-        );
+        return _buildRoute(HomeScreen(), settings);
 
 
       default:
@@ -37,5 +35,7 @@ class AppRoutes {
     );
   }
 
-  static _build
+  static _buildRoute(Widget widget, RouteSettings settings){
+    return MaterialPageRoute(builder: (context)=> widget , settings: settings );
+  }
 }

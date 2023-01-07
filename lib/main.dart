@@ -1,5 +1,4 @@
 import 'package:git_repo/app/routes/route_manager.dart';
-import 'package:git_repo/presentation/home/home_screens/home_screen.dart';
 
 import 'common/common_libs.dart';
 
@@ -10,7 +9,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,6 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       initialRoute: AppRoutes.homepage,
+      onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }
 }

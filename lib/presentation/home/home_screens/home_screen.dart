@@ -1,0 +1,11 @@
+import '../../../common/common_libs.dart';
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold();
+  }
+}
+
