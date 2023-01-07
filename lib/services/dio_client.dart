@@ -1,9 +1,8 @@
 import 'package:dio/dio.dart';
-
 import 'end_points.dart';
 
 class DioClient{
-  static BaseOptions options = new BaseOptions(
+  static BaseOptions options = BaseOptions(
     baseUrl: Endpoints.baseUrl,
     receiveTimeout: Endpoints.receiveTimeOut,
     connectTimeout: Endpoints.connectionTimeOut,
@@ -28,6 +27,31 @@ class DioClient{
       );
 
       return response.data;
+    }catch(e){
+      rethrow;
+    }
+  }
+
+
+  Future<dynamic> post(String uri, {
+    data,
+    Map<String, dynamic>? queryparams,
+    Options? options,
+    CancelToken? cancelToken,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onRecieneProgress,
+ })async{
+    try{
+      final Response response = await _dio.post(
+          uri,
+          data: data,
+          queryParameters: queryparams,
+          options: options,
+          onReceiveProgress: onRecieneProgress,
+          onSendProgress: onSendProgress,
+          cancelToken: cancelToken
+      );
+
     }catch(e){
       rethrow;
     }
