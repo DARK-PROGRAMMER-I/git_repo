@@ -19,7 +19,15 @@ class DioClient{
         ProgressCallback? onRecieneProgress,
   })async{
     try{
-      final
+      final Response response = await _dio.get(
+        uri,
+        queryParameters: queryparams,
+        options: options,
+        onReceiveProgress: onRecieneProgress,
+        cancelToken: cancelToken
+      );
+
+      return response.data;
     }catch(e){
       rethrow;
     }
