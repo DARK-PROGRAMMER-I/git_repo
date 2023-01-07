@@ -1,5 +1,7 @@
-enum Endpoints {
-  baseUrl,
-  connectionTimeOut,
-  receiveTimeOut,
+class Endpoints{
+  Endpoints._();
+
+  static String? baseUrl;
+  static int? connectionTimeOut;
+  static int? receiveTimeOut;
 }
