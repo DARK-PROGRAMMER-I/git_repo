@@ -4,9 +4,9 @@ import 'end_points.dart';
 
 class DioClient{
   static BaseOptions options = new BaseOptions(
-    // baseUrl: Endpoints.baseUrl,
-    // headers: ,
-    // connectTimeout: ,
+    baseUrl: Endpoints.baseUrl,
+    headers: ,
+    connectTimeout: ,
   );
 
   Dio _dio = Dio(options);
