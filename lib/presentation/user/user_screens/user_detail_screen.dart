@@ -54,8 +54,17 @@ class UserDetailScreen extends StatelessWidget {
                   width: 10.w,
                 ),
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-
+                    Text(
+                      'Name',
+                      style: getMediumStyle(color: MyColors.black),
+                    ),
+                    Text(
+                      'Description',
+                      style: getMediumStyle(color: MyColors.black),
+                    )
                   ],
                 )
               ],
