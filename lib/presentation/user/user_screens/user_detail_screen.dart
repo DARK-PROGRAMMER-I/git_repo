@@ -59,11 +59,14 @@ class UserDetailScreen extends StatelessWidget {
                   children: [
                     Text(
                       'Name',
-                      style: getMediumStyle(color: MyColors.black),
+                      style: getMediumStyle(color: MyColors.black, fontSize: 14.sm),
+                    ),
+                    SizedBox(
+                      height: 10.h,
                     ),
                     Text(
                       'Description',
-                      style: getMediumStyle(color: MyColors.black),
+                      style: getRegularStyle(color: MyColors.black, fontSize: 11.sm),
                     )
                   ],
                 )
