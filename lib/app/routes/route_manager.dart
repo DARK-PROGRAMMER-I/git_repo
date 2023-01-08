@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:git_repo/presentation/home/home_screens/home_screen.dart';
+import 'package:git_repo/presentation/user/user_screens/user_detail_screen.dart';
 
 import '../constants/strings_manager.dart';
 
 class AppRoutes {
   static const String homepage = '/';
+  static const String userDetailspage = '/user-detail-page';
 
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case homepage:
-        return _buildRoute(HomeScreen(), settings);
+        return _buildRoute(const HomeScreen(), settings);
+
+      case userDetailspage:
+        return _buildRoute(const UserDetailScreen(), settings);
 
 
       default:

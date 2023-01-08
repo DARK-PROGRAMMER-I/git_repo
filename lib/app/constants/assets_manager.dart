@@ -1,6 +1,6 @@
-const String iconPath = 'assets/icons';
+const String imagesPath = 'assets/images';
 class AppIcons{
-  // static const String create = '$iconPath/create.png';
+  static const String githubLogo = '$imagesPath/github-logo.png';
   // static const String favorite = '$iconPath/favorite.png';
   // static const String mosjid = '$iconPath/mosjid.png';
   // static const String notification = '$iconPath/notification.png';
