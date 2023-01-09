@@ -14,6 +14,7 @@ class UserDetailScreen extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 80.h,),
             UserInfoTile(
@@ -25,6 +26,11 @@ class UserDetailScreen extends StatelessWidget {
             UserFollowTile(
               followerCount: 20,
               followingCount: 100,
+            ),
+            SizedBox(height: 30.h,),
+            Text(
+                'REPOSITORIES',
+              style: getSemiBoldStyle(color: MyColors.black, fontSize: 20.sm),
             )
 
           ],
