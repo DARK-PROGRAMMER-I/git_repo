@@ -1,5 +1,9 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:git_repo/providers/user_provider/user_provider.dart';
+import 'package:provider/provider.dart';
 
+import '../../../app/routes/route_manager.dart';
+import '../../../app/utils/custom_snackbar.dart';
 import '../../../common/common_libs.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -46,15 +50,35 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(height: 30.h,),
-            MaterialButton(
-               minWidth: 200.w,
-              color: Colors.black,
-              onPressed: (){},
-              height: 30.h,
-              child: 
-              Text(
-                "Login",
-                style: getRegularStyle(color: MyColors.white),),
+            Consumer<UserProvider>(
+              builder: (context, userProvider, child){
+                return MaterialButton(
+                  minWidth: 200.w,
+                  color: Colors.black,
+                  onPressed: ()async{
+                    if(_nameCtr.text.isNotEmpty){
+                      bool stat = await userProvider.getUserProfileData(userName: _nameCtr.text);
+                      if(stat){
+                        Navigator.pushNamedAndRemoveUntil(
+                            context,
+                            AppRoutes.userDetailspage,
+                            (route) => false,
+                        );
+                      }
+                    }else{
+                      showSnackBar(
+                        context: context,
+                        message: 'Enter Name'
+                      );
+                    }
+                  },
+                  height: 30.h,
+                  child: userProvider.isLoading ? CircularProgressIndicator():
+                  Text(
+                    "Login",
+                    style: getRegularStyle(color: MyColors.white),),
+                );
+              },
             )
           ],
         ),

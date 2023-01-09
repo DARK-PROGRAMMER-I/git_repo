@@ -10,8 +10,8 @@ class GithubApi{
 
   Future<UserProfileModel> getUserProfile({required String username})async{
     try{
-      Response response = await _client.get('${Endpoints.userProfile}/$username');
-      return UserProfileModel.fromJson(response.data);
+      final response = await _client.get('${Endpoints.userProfile}/$username');
+      return UserProfileModel.fromJson(response);
     }catch(e){
       rethrow;
     }
@@ -20,7 +20,7 @@ class GithubApi{
   Future<List<UserReposModel>> getUserRepos({required String username})async{
     try{
       final response = await _client.get('${Endpoints.userProfile}/$username/${Endpoints.userRepos}');
-      return response.map((item)=> UserReposModel.fromJson(item.data)).toList();
+      return response.map((item)=> UserReposModel.fromJson(item)).toList();
     }catch(e){
       rethrow;
     }
