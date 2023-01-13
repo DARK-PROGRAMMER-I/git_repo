@@ -5,6 +5,7 @@ import 'package:git_repo/presentation/user/user_widgets/user_repo_body.dart';
 import 'package:git_repo/providers/user_provider/user_provider.dart';
 import 'package:provider/provider.dart';
 
+import '../../../app/routes/route_manager.dart';
 import '../../../common/common_libs.dart';
 import '../user_widgets/user_follow_tile.dart';
 
@@ -48,8 +49,7 @@ class UserDetailScreen extends StatelessWidget {
                       color: MyColors.black,
                     )),
                   ):
-                  UserRepoBody(
-                    onTap: (){},
+                  const UserRepoBody(
                   ),
 
                 ],

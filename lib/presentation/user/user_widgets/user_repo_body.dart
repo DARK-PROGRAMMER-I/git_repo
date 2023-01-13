@@ -1,11 +1,12 @@
 import 'package:git_repo/providers/user_provider/user_provider.dart';
 import 'package:provider/provider.dart';
 
+import '../../../app/routes/route_manager.dart';
 import '../../../common/common_libs.dart';
 
 class UserRepoBody extends StatelessWidget {
-  final VoidCallback onTap;
-  const UserRepoBody({Key? key, required this.onTap}) : super(key: key);
+
+  const UserRepoBody({Key? key,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,13 @@ class UserRepoBody extends StatelessWidget {
             itemBuilder: (context, index) {
               return InkWell(
                 borderRadius: BorderRadius.circular(20.r),
-                onTap: onTap,
+                onTap: (){
+                Navigator.pushNamed(
+                  context,
+                  AppRoutes.webViewspage,
+                  arguments: userProvider.userRepos![index].htmlUrl.toString(),
+                );
+              },
                 child: Container(
                   padding: EdgeInsets.all(20.sm),
                   decoration: BoxDecoration(

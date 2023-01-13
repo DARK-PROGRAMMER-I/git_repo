@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:git_repo/presentation/home/home_screens/home_screen.dart';
 import 'package:git_repo/presentation/user/user_screens/user_detail_screen.dart';
 
+import '../../presentation/webview/webview_screen/webview_screen.dart';
 import '../constants/strings_manager.dart';
 
 class AppRoutes {
@@ -19,7 +20,7 @@ class AppRoutes {
         return _buildRoute(const UserDetailScreen(), settings);
 
       case webViewspage:
-        return _buildRoute(const UserDetailScreen(), settings);
+        return _buildRoute(const WebViewScreen(), settings);
 
 
       default:

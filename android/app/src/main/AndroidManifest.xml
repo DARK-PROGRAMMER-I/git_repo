@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dark_solutions.git_repo">
-   <application
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application
         android:label="git_repo"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
