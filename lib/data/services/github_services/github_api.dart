@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:git_repo/data/models/user_models/user_repos_model.dart';
 import 'package:git_repo/data/services/dio_client.dart';
 import 'package:git_repo/data/services/end_points.dart';
@@ -20,7 +19,12 @@ class GithubApi{
   Future<List<UserReposModel>> getUserRepos({required String username})async{
     try{
       final response = await _client.get('${Endpoints.userProfile}/$username/${Endpoints.userRepos}');
-      return response.map((item)=> UserReposModel.fromJson(item)).toList();
+      List<UserReposModel> temp = [];
+
+      response.forEach((element){
+        temp.add(UserReposModel.fromJson(element));
+      });
+      return temp;
     }catch(e){
       rethrow;
     }

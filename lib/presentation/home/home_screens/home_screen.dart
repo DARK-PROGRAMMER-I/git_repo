@@ -14,7 +14,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  TextEditingController _nameCtr = TextEditingController();
+  final TextEditingController _nameCtr = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 150.h,
             ),
             Center(
-              child: Container(
+              child: SizedBox(
                 width: 100.w,
                 height: 100.h,
                 child: Image.asset(AppIcons.githubLogo),
@@ -57,7 +57,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Colors.black,
                   onPressed: ()async{
                     if(_nameCtr.text.isNotEmpty){
-                      bool stat = await userProvider.getUserProfileData(userName: _nameCtr.text);
+                      bool stat = await userProvider.getUserProfileData(
+                        context,
+                        userName: _nameCtr.text,
+                      );
                       if(stat){
                         Navigator.pushNamedAndRemoveUntil(
                             context,
@@ -73,7 +76,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     }
                   },
                   height: 30.h,
-                  child: userProvider.isLoading ? CircularProgressIndicator():
+                  child: userProvider.isLoading ? SizedBox(
+                    height: 20.h,
+                    width: 20.h,
+                    child: CircularProgressIndicator(
+                      color: MyColors.white,
+                    ),
+                  ):
                   Text(
                     "Login",
                     style: getRegularStyle(color: MyColors.white),),

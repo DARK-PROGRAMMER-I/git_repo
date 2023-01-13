@@ -51,7 +51,7 @@ class DioClient{
           onSendProgress: onSendProgress,
           cancelToken: cancelToken
       );
-
+      return response.data;
     }catch(e){
       rethrow;
     }
