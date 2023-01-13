@@ -48,7 +48,9 @@ class UserDetailScreen extends StatelessWidget {
                       color: MyColors.black,
                     )),
                   ):
-                  const UserRepoBody(),
+                  UserRepoBody(
+                    onTap: (){},
+                  ),
 
                 ],
               );

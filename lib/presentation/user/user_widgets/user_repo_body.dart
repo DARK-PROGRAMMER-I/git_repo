@@ -4,7 +4,8 @@ import 'package:provider/provider.dart';
 import '../../../common/common_libs.dart';
 
 class UserRepoBody extends StatelessWidget {
-  const UserRepoBody({Key? key}) : super(key: key);
+  final VoidCallback onTap;
+  const UserRepoBody({Key? key, required this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class UserRepoBody extends StatelessWidget {
             itemBuilder: (context, index) {
               return InkWell(
                 borderRadius: BorderRadius.circular(20.r),
-                onTap: (){},
+                onTap: onTap,
                 child: Container(
                   padding: EdgeInsets.all(20.sm),
                   decoration: BoxDecoration(

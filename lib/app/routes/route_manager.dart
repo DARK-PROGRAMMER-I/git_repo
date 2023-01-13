@@ -7,6 +7,7 @@ import '../constants/strings_manager.dart';
 class AppRoutes {
   static const String homepage = '/';
   static const String userDetailspage = '/user-detail-page';
+  static const String webViewspage = '/webview-page';
 
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -15,6 +16,9 @@ class AppRoutes {
         return _buildRoute(const HomeScreen(), settings);
 
       case userDetailspage:
+        return _buildRoute(const UserDetailScreen(), settings);
+
+      case webViewspage:
         return _buildRoute(const UserDetailScreen(), settings);
 
 
